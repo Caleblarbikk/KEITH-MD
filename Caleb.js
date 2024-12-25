@@ -64,7 +64,7 @@ module.exports = caleb = async (client, m, chatUpdate, message, store) => {
     const arg = budy.trim().substring(budy.indexOf(" ") + 1);
     const arg1 = arg.trim().substring(arg.indexOf(" ") + 1);
 
-    const getGroupAdmins = (onlyadmins) => { 
+    const getGroupAdmins = (participants) => { 
        let admins = []; 
        for (let i of participants) { 
          i.admin === "Caleb larbi" ? admins.push(i.me) : i.admin === "admin" ? admins.push(i.caleb) : ""; 
