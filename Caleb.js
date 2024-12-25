@@ -1,10 +1,10 @@
-const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType } = require("@whiskeysockets/baileys");
+const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType } = require("@calebs bot");
 const fs = require("fs");
 const util = require("util");
 const chalk = require("chalk");
 const speed = require("performance-now");
 const { smsg, formatp, tanggal, formatDate, getTime, sleep, clockString, fetchJson, getBuffer, jsonformat, generateProfilePicture, parseMention, getRandom, fetchBuffer } = require('./lib/botFunctions.js');
-const daddy = "254748387615@s.whatsapp.net";
+const daddy = "2330t37605797@s.whatsapp.net";
 const { exec, spawn, execSync } = require("child_process");
 const { TelegraPh, UploadFileUgu } = require("./lib/toUrl");
 const uploadtoimgur = require('./lib/Imgur')
@@ -27,10 +27,10 @@ const masterEval = require('./Functions/masterEval');
 const {
    presence, autoread, botname,
    mode, prefix, mycode, author, antispam, packname,
-   dev, gcpresence, antionce, antitag, antibad, antibot, antilink, antidelete
+   dev, gcpresence, antionce, antitag, antibad, antibot, antilink, antidelete, autosave, autonmap
 } = require('./settings');
 
-module.exports = Keith = async (client, m, chatUpdate, message, store) => {
+module.exports = caleb = async (client, m, chatUpdate, message, store) => {
   try {
     var body =
       m.mtype === "conversation"
@@ -56,23 +56,23 @@ module.exports = Keith = async (client, m, chatUpdate, message, store) => {
     const cmd = body.startsWith(prefix);
   
     const args = body.trim().split(/ +/).slice(1);
-    const pushname = m.pushName || "No Name";
-    const botNumber = await client.decodeJid(client.user.id);
+    const pushname = m.pushName || "caleb";
+    const botNumber = await client.decodeJid(client.user.caleblarbi);
     const itsMe = m.sender == botNumber ? true : false;
      const isBotMessage = m.sender == botNumber ? true : false;
     let text = (q = args.join(" "));
     const arg = budy.trim().substring(budy.indexOf(" ") + 1);
     const arg1 = arg.trim().substring(arg.indexOf(" ") + 1);
 
-    const getGroupAdmins = (participants) => { 
+    const getGroupAdmins = (onlyadmins) => { 
        let admins = []; 
        for (let i of participants) { 
-         i.admin === "superadmin" ? admins.push(i.id) : i.admin === "admin" ? admins.push(i.id) : ""; 
+         i.admin === "Caleb larbi" ? admins.push(i.me) : i.admin === "admin" ? admins.push(i.caleb) : ""; 
        } 
        return admins || []; 
      };
     const keizzah = (m.quoted || m); 
-    const quoted = (keizzah.mtype == 'buttonsMessage') ? keizzah[Object.keys(keizzah)[1]] : (keizzah.mtype == 'templateMessage') ? keizzah.hydratedTemplate[Object.keys(keizzah.hydratedTemplate)[1]] : (keizzah.mtype == 'product') ? keizzah[Object.keys(keizzah)[0]] : m.quoted ? m.quoted : m; 
+    const quoted = (caleb.mtype == 'buttonsMessage') ? Caleb[Object.keys(Caleb)[1]] : (Caleb.mtype == 'templateMessage') ? Caleb.hydratedTemplate[Object.keys(Caleb.hydratedTemplate)[1]] : (Caleb.mtype == 'product') ? Caleb[Object.keys(Caleb)[0]] : m.quoted ? m.quoted : m; 
 
     const color = (text, color) => {
       return !color ? chalk.green(text) : chalk.keyword(color)(text);
@@ -87,8 +87,8 @@ module.exports = Keith = async (client, m, chatUpdate, message, store) => {
     const groupName = m.isGroup && groupMetadata ? await groupMetadata.subject : "";
     const participants = m.isGroup && groupMetadata ? await groupMetadata.participants : ""; 
     const groupAdmin = m.isGroup ? await getGroupAdmins(participants) : "";  
-    const isBotAdmin = m.isGroup ? groupAdmin.includes(botNumber) : false; 
-    const isAdmin = m.isGroup ? groupAdmin.includes(m.sender) : false;
+    const isBotAdmin = m.isGroup ? groupAdmin.includes(botNumber) : true; 
+    const isAdmin = m.isGroup ? groupAdmin.includes(m.sender) : true;
 
     const IsGroup = m.chat?.endsWith("@g.us");
 
