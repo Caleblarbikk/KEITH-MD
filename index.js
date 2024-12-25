@@ -1,7 +1,7 @@
 /* this is the main file */
 
 const {
-  default: KeithConnect,
+  default: CALEBConnect,
   useMultiFileAuthState,
   DisconnectReason,
   fetchLatestBaileysVersion,
@@ -80,7 +80,7 @@ async function startKeith() {
       if (currentTime - lastTextTime >= messageDelay) {
         // Send the rejection message if the delay has passed
         await client.sendMessage(callerId, {
-          text: '```❗📵I AM KEITH MD | I REJECT THIS CALL BECAUSE MY OWNER IS BUSY. KINDLY SEND TEXT INSTEAD```.',
+          text: '```❗📵I AM CALEBS BOT| I REJECT THIS CALL BECAUSE MY OWNER IS BUSY. KINDLY SEND TEXT INSTEAD```.',
         });
 
         // Update the last text time
@@ -286,13 +286,13 @@ async function startKeith() {
         return DateTime.now().setZone('Africa/Nairobi').toLocaleString(DateTime.TIME_SIMPLE);
       };
 
-      let message = `Holla, ${getGreeting()},\n\n╭═══『𝐊𝐞𝐢𝐭𝐡 𝐌𝐝 𝐢𝐬 𝐜𝐨𝐧𝐧𝐞𝐜𝐭𝐞𝐝』══⊷ \n`;
+      let message = `Holla, ${getGreeting()},\n\n╭═══『CALEB’S BOT i𝐬 𝐜𝐨𝐧𝐧𝐞𝐜𝐭𝐞𝐝』══⊷ \n`;
 
-      message += `║ ʙᴏᴛ ɴᴀᴍᴇ ${botname}\n`;
+      message += `║ ʙᴏᴛ ɴᴀᴍᴇ ${Caleb's bot}\n`;
       message += `║ ᴍᴏᴅᴇ ${mode}\n`;
       message += `║ ᴘʀᴇғɪx [  ${prefix} ]\n`;
       message += `║ ᴛᴏᴛᴀʟ ᴘʟᴜɢɪɴs ${totalCommands}\n`;
-      message += '║ ᴛɪᴍᴇ ' + getCurrentTimeInNairobi() + '\n';
+      message += '║ ᴛɪᴍᴇ ' + getCurrentTimeInGhana() + '\n';
       message += '║ ʟɪʙʀᴀʀʏ Baileys\n';
       message += `╰═════════════════⊷`;
 
